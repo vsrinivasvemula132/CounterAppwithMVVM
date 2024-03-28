@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         //viewmodel1 = ViewModelProvider(this).get(CounterViewModel::class.java)
         viewmodel1 = ViewModelProvider(this)[CounterViewModel::class.java]
 
-        viewmodel1.counter.observe(this, Observer {counter ->
-            binding1.counterText1.text = counter.count.toString()
+        viewmodel1.counter.observe(this) { x ->
+            binding1.counterText1.text = x.count.toString()
 
-        })
+        }
         binding1.plusBtn1.setOnClickListener{
             viewmodel1.incrementCounter()
 
