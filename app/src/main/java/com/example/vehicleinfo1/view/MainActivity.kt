@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         viewmodel1.counter.observe(this) { x ->
             binding1.counterText1.text = x.count.toString()
-
         }
         binding1.plusBtn1.setOnClickListener{
             viewmodel1.incrementCounter()
